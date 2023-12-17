@@ -46,6 +46,10 @@ class AccountService {
     // console.log(res)
   }
 
+  logout(){
+    AppState.user = null
+    AppState.account = null
+  }
 }
 
 export const accountService = new AccountService()

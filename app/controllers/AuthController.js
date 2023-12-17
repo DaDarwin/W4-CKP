@@ -5,35 +5,35 @@ import { logger } from '../utils/Logger.js'
 
 const SHOW_SETTINGS = false
 
-// function drawUser() {
-//   const user = AppState.user
-//   const account = AppState.account
-//   const userAvatar = avatarTemplate(account)
-//   const button = authButton(user)
-//   const template = /* html */ `
-//     ${userAvatar}
-//     ${button}
-//   `
-//   // @ts-ignore
-//   document.getElementById('authstate').innerHTML = template
-// }
+function drawUser() {
+  const user = AppState.user
+  const account = AppState.account
+  const userAvatar = avatarTemplate(account)
+  const button = authButton(user)
+  const template = /* html */ `
+    ${userAvatar}
+    ${button}
+  `
+  // @ts-ignore
+  document.getElementById('authstate').innerHTML = template
+}
 
-// function _drawAuthSettings() {
-//   if (!SHOW_SETTINGS) { return }
-//   const elem = document.createElement('section')
-//   elem.id = 'auth-settings'
-//   elem.onclick = () => {
-//     elem.remove()
-//   }
-//   elem.innerHTML = authSettingsTemplate()
-//   document.body.appendChild(elem)
-// }
+function _drawAuthSettings() {
+  if (!SHOW_SETTINGS) { return }
+  const elem = document.createElement('section')
+  elem.id = 'auth-settings'
+  elem.onclick = () => {
+    elem.remove()
+  }
+  elem.innerHTML = authSettingsTemplate()
+  document.body.appendChild(elem)
+}
 export class AuthController {
   constructor() {
-    // AppState.on('account', drawUser)
-    // AuthService.on(AuthService.AUTH_EVENTS.LOADED, drawUser)
-    // AuthService.on(AuthService.AUTH_EVENTS.LOADED, _drawAuthSettings)
-    // drawUser()
+    AppState.on('account', drawUser)
+    AuthService.on(AuthService.AUTH_EVENTS.LOADED, drawUser)
+    AuthService.on(AuthService.AUTH_EVENTS.LOADED, _drawAuthSettings)
+    drawUser()
   }
 
   async login() {
@@ -68,10 +68,8 @@ function avatarTemplate(account) {
   return account
     ? /* html */ `
     <div class="mr-2">
-      <a href="/#/account" class="text-white nav-link selectable rounded" title="Manage Account">
         <img class="rounded-circle" src="${account.picture}" alt="${account.name}" height="45"/>
         <span class="mx-1">${account.name}</span>
-      </a>
     </div>`
     : AuthService.loading
       ? /* html */ `

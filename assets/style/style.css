@@ -55,6 +55,13 @@
     width: 90%;
 }
 
-#weather{
-    max-height: 30%;
+#forecast{
+    max-height: 150px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+
+#account-welcome{
+    max-height: 150px;
+    aspect-ratio: 1/1;
 }

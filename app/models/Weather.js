@@ -12,15 +12,16 @@ export class Weather{
 
         this.temp = this.getCelsius(data.main.temp)
         this.feels = this.getCelsius(data.main.feels_like)
+        this.humidity = data.main.humidity
             
     }
         
 
     getCelsius(kelvin){
-        return (kelvin - 273.15)
+        return Math.round(kelvin - 273.15)
     }
     
     static getFahrenheit(celsius){
-        celsius * (9/5) + 32
+        return Math.round(celsius * (9/5) + 32)
     }
 }

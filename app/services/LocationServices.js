@@ -23,6 +23,18 @@ class LocationServices{
         console.log('weather',AppState.weather)
     }
 
+    changeTemp(){
+        let temp = AppState.pref.tempFah
+        if(temp){
+            temp = false
+            AppState.pref.tempFah = temp
+        }
+        else {
+            temp = true
+            AppState.pref.tempFah = temp
+        }
+    }
+
 }
 
 

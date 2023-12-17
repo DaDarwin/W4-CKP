@@ -9,12 +9,12 @@ export class Account {
 
   get AccountCardTemplate() {
     return /*html*/`
-    <div class="card text-center" style="width:18em">
-      <img src="${this.picture}" title="${this.name}-picture" alt="account-picture" />
-      <div class="card-body">
+      <div class="h-75 w-75">
+        <img class="img-fluid" src="${this.picture}" title="${this.name}-picture" alt="account-picture" />
+      </div>
+      <div class="d-flex justify-content-center  align-items-center h-25">
         <p class="fs-4 lead">${this.name}</p>
       </div>
-    </div>
     `
   }
 }

@@ -10,16 +10,19 @@ function _drawTodos(){
   setHTML('todoList', content)
   setText('todoNum', `${AppState.todos.filter(todo => todo.completed == false).length} Todo's Left`)
 }
-
 export class AccountController {
   constructor() {
     accountService.getAccount()
     AppState.on('user', this.getTodos)
     AppState.on('todos', _drawTodos)
+    if(AppState.user){
+      document.getElementById('todos').classList.remove('d-none')
+    }
     this.getTodos()
   }
 
   async getTodos(){
+    document.getElementById('todos').classList.remove('d-none')
     try {
       await accountService.getTodos()
     } catch (error) {

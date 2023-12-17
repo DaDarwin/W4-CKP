@@ -9,18 +9,18 @@ function _drawTime(){
 }
 
 function _drawWeather(){
-    // const weather = AppState.weather
-    // setText('city', weather.name)
-    // setText('main', weather.main)
-    // setText('humidity', weather.humidity)
-    // if(AppState.pref.tempFah){
-    //     setText('temp', `${Weather.getFahrenheit(weather.temp)}C`)
-    //     setText('feels', `${Weather.getFahrenheit(weather.feels)}C`)
-    // }
-    // else{
-    //     setText('temp', `${weather.temp}C`)
-    //     setText('feels', `${weather.feels}C`)
-    // }
+    const weather = AppState.weather
+    setText('city', weather.city)
+    setText('weather', weather.main)
+    setText('humidity', `Humidity: ${weather.humidity}°`)
+    if(AppState.pref.tempFah){
+        setText('temp', `Temp: ${Weather.getFahrenheit(weather.temp)}F°`)
+        setText('feels', `Feels Like: ${Weather.getFahrenheit(weather.feels)}F°`)
+    }
+    else{
+        setText('temp', `Temp: ${weather.temp}C°`)
+        setText('feels', `Feels Like:${weather.feels}C°`)
+    }
 }
 
 
@@ -33,7 +33,7 @@ export class LocationController{
         this.getWeather()
         AppState.on('time', _drawTime)
         AppState.on('weather', _drawWeather)
-        AppState.on('pref.tempFah', _drawWeather)
+        AppState.on('pref', _drawWeather)
     }
 
     async getWeather(){
@@ -42,5 +42,9 @@ export class LocationController{
         } catch (error) {
             console.error(error)
         }
+    }
+
+    changeTemp(){
+        locationServices.changeTemp()
     }
 }

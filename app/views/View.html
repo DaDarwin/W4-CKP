@@ -3,15 +3,23 @@
 
         <div class="col-12 d-flex justify-content-between rounded text-light">
 
-            <div id="weather" class="m-5 p-2 border border-1 border-light rounded box-shadow-dark">
-                <h4 id="city">Boise</h4>
-                <h5 id="main">Cloudy <i class="mdi mdi-cloud"></i></h5>
-                <h5 id="temp">271 K <sup>o</sup></h5>
-                <h6 id="feels">Feels Like: 267<sup>o</sup></h6>
-                <h6 id="humidity">Humidity: 93<sup>o</sup></h6>
+            <div class="m-5">
+
+                <!-- <div role="button" id="authstate" class="d-flex align-items-center border border-1 border-light rounded box-shadow-dark flex-column p-1">
+
+                </div> -->
+                
+                <div role="button" id="forecast" class="p-2 border border-1 border-light rounded box-shadow-dark" onclick="app.LocationController.changeTemp()">
+                    <h4 id="city">Boise</h4>
+                    <h5 id="weather">Cloudy <i class="mdi mdi-cloud"></i></h5>
+                    <h5 id="temp">271 K <sup>o</sup></h5>
+                    <h6 id="feels">Feels Like: 267<sup>o</sup></h6>
+                    <h6 id="humidity">Humidity: 93<sup>o</sup></h6>
+                </div>
+
             </div>
 
-            <div class="m-5 p-2 text-light border border-1 border-light box-shadow-dark rounded mh-75">
+            <div id="todos" class="m-5 p-2 text-light border border-1 border-light box-shadow-dark rounded mh-75"> <!--Note i broke the account d-none"> --->
                 <form onsubmit="app.AccountController.newGoal()" class="m-3 sticky-top">
                     <div class="row text-shadow-dark box-shadow-dark p-1 rounded border border-1 border-light">
                         <label for="newTodo">New Todo</label>
