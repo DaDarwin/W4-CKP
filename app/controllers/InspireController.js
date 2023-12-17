@@ -1,17 +1,24 @@
 import { AppState } from '../AppState.js';
 import { inspireService } from '../services/InspireService.js';
+import { setHTML, setText } from '../utils/Writer.js';
 
 
+function _drawImage(){
+    document.getElementById('image').style = `background-image: url(${AppState.image.largeImgUrl});`
+}
 
+async function _drawQuote(){
+    setText('quote', AppState.quote.content)
+    setText('quoteAuthor', AppState.quote.author)
+}
 
 export class InspireController{
 
     constructor(){
         AppState.on('user', this.getInspire)
         this.getInspire()
-        // AppState.on('image', _drawImage)
-        // AppState.on('quote' _drawQuote)
-
+        AppState.on('image', _drawImage)
+        AppState.on('quote', _drawQuote)
     }
     getInspire(){
         this.getImage()

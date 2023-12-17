@@ -19,11 +19,32 @@ class AccountService {
     AppState.account = new Account(res.data)
   }
 
-  // async getTodos(){
-  //   const Response = await api.get('api/todos')
-  //   AppState.todos = new Todo(AppState.data)
-  //   console.log(AppState.todos)
-  // }
+  async getTodos(){
+    const Response = await api.get('api/todos')
+    AppState.todos = Response.data.map(todo => new Todo(todo))
+    // console.log('todos',Response, AppState.todos)
+  }
+
+  async newGoal(todo){
+    let Response = await api.post('api/todos', todo)
+    AppState.todos.push(new Todo(Response.data))
+    // console.log(Response, AppState.todos)
+  }
+
+  async markDone(id, value){
+    const todo = AppState.todos.find(todo => todo.id == id)
+    todo.completed = value
+    AppState.emit('todos')
+    const Response = await api.put(`api/todos/${id}`, todo)
+    // console.log(Response)
+  }
+
+  async deleteTodo(id){
+    const index = AppState.todos.findIndex(todo => todo.id == id)
+    AppState.todos.splice(index, 1)
+    const res = await api.delete(`api/todos/${id}`)
+    // console.log(res)
+  }
 
 }
 

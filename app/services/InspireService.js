@@ -9,13 +9,13 @@ class InspireService{
     async getImage(){
         const Response = await api.get('api/images')
         AppState.image = new BgImage(Response.data)
-        console.log('image',AppState.image)
+        // console.log('image',AppState.image)
     }
 
     async getQuote(){
         const Response = await api.get('api/quotes')
         AppState.quote = new Quote(Response.data)
-        console.log('quote',AppState.quote)
+        // console.log('quote',AppState.quote, Response.data)
     }
 }
 

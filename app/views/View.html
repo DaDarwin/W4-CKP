@@ -1,1 +1,44 @@
-<section id="main"></section>
+<section id="main" class="container-fluid">
+    <div id='image' class="bg-image row justify-content-center border border-dark border-5 text-shadow-dark fw-semibold fst-italic">
+
+        <div class="col-12 d-flex justify-content-between rounded text-light">
+
+            <div id="weather" class="m-5 p-2 border border-1 border-light rounded box-shadow-dark">
+                <h4 id="city">Boise</h4>
+                <h5 id="main">Cloudy <i class="mdi mdi-cloud"></i></h5>
+                <h5 id="temp">271 K <sup>o</sup></h5>
+                <h6 id="feels">Feels Like: 267<sup>o</sup></h6>
+                <h6 id="humidity">Humidity: 93<sup>o</sup></h6>
+            </div>
+
+            <div class="m-5 p-2 text-light border border-1 border-light box-shadow-dark rounded mh-75">
+                <form onsubmit="app.AccountController.newGoal()" class="m-3 sticky-top">
+                    <div class="row text-shadow-dark box-shadow-dark p-1 rounded border border-1 border-light">
+                        <label for="newTodo">New Todo</label>
+                        <div class="border border-1 border-light box-shadow-dark rounded d-flex p-0">
+                            <input id="newTodo" name="description" class="form-control col-6 w-75 bg-transparent border-0" type="text" maxlength="20" minlength="2">
+                            <button  class="btn btn-outline-light border-bottom-0 border-top-0 border-end-0 w-25 box-shadow-dark"><i class="mdi mdi-subdirectory-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <div id="todoNum" class="text-center text-shadow-dark m-1"></div>
+                <div id="todoList" class="d-flex align-items-center flex-column overflow-scroll mh-75 m-0"></div>
+            </div>
+
+        </div>
+
+            <div id="time" class="col-2 text-center align-self-center text-light time m-0 position-absolute"></div>
+
+   
+
+        <div class="text-light mb-5 p-5 border border-1 border-light row justify-content-center align-items-center text-shadow-dark box-shadow-dark author align-self-end col-6 m-0 p-0 rounded">
+            <p id="quote" class="col-10"></p>
+            <span id="quoteAuthor" class="col-8 text-end"></span>
+        </div>
+
+            
+            
+     
+
+    </div>
+</section>

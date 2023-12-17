@@ -4,35 +4,35 @@
 
 ### 0/15
 
-* [ ] **Login** automatically on refresh
+* [x] **Login** automatically on refresh
 
-* [ ] **Image** must be large with at least one element on top
+* [x] **Image** must be large with at least one element on top
 
-* [ ] **Image** Must be random from api
+* [x] **Image** Must be random from api
 
 * [ ] **Weather** Temp displayed in F and C
 
-* [ ] **Quote:** Always displays and author on hover
+* [x] **Quote:** Always displays and author on hover
 
-* [ ] **Clock** accurate time and updates appropriately
+* [x] **Clock** accurate time and updates appropriately
 
-* [ ] **Todo** When Adding, page doesn't reload
+* [x] **Todo** When Adding, page doesn't reload
 
-* [ ] **Todo**  can be added to API
+* [x] **Todo**  can be added to API
 
-* [ ] **Todo**  can be Updated to API
+* [x] **Todo**  can be Updated to API
 
-* [ ] **Todo** style indicater when completed
+* [x] **Todo** style indicater when completed
 
-* [ ] **Todo** Can be deleted from API
+* [x] **Todo** Can be deleted from API
 
-* [ ] **Todo** comfirm deletion
+* [x] **Todo** comfirm deletion
 
-* [ ] **Todo** lists the number of unfinished Todoes
+* [x] **Todo** lists the number of unfinished Todoes
 
 * [ ] **Todo** only rendered for user when logged in
 
-* [ ] **API Data** must be retrieved and persisted through Sandbox API
+* [x] **API Data** must be retrieved and persisted through Sandbox API
 
 ### Extra Goals
 

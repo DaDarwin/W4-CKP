@@ -9,9 +9,13 @@ import { api } from "./AxiosService.js"
 class LocationServices{
 
     constructor(){
-        let time = setInterval(this.getTime, 15000)
+        setInterval(this.getTime, 15000)
     }
-
+    
+    getTime(){
+        AppState.time = `${new Date().getHours()}:${(new Date().getMinutes()<10)? '0'+ String(new Date().getMinutes()) : new Date().getMinutes()}`
+        // console.log('time', AppState.time)
+    }
 
     async getWeather(){
         const response = await api.get('api/weather')
@@ -19,11 +23,8 @@ class LocationServices{
         console.log('weather',AppState.weather)
     }
 
-    getTime(){
-        AppState.time = `${new Date().getHours()}:${(new Date().getMinutes()<10)?'0'+ String(new Date().getMinutes()):new Date().getMinutes()}`
-        console.log('time', AppState.time)
-    }
 }
+
 
 
 
