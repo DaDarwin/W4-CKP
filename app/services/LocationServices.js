@@ -13,7 +13,7 @@ class LocationServices{
     }
     
     getTime(){
-        AppState.time = `${new Date().getHours()}:${(new Date().getMinutes()<10)? '0'+ String(new Date().getMinutes()) : new Date().getMinutes()}`
+        AppState.time = `${AppState.pref.time12 = true? (new Date().getHours()>12? new Date().getHours() - 12 : new Date().getHours() ) : new Date().getHours()}:${(new Date().getMinutes()<10)? '0'+ String(new Date().getMinutes()) : new Date().getMinutes()}`
         // console.log('time', AppState.time)
     }
 
@@ -33,6 +33,14 @@ class LocationServices{
             temp = true
             AppState.pref.tempFah = temp
         }
+    }
+
+    timeMethod(){
+        if(AppState.pref.time12){
+            AppState.pref.time12 = false
+        }
+        else AppState.pref.time12 = true
+        
     }
 
 }

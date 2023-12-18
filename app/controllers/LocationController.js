@@ -47,4 +47,9 @@ export class LocationController{
     changeTemp(){
         locationServices.changeTemp()
     }
+
+    timeMethod(){
+        locationServices.timeMethod()
+        
+    }
 }

@@ -19,6 +19,7 @@ class ObservableAppState extends EventEmitter {
 
   pref = {
     tempFah : false,
+    time12 : false
   }
 }
 
