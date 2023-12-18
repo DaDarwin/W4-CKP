@@ -9,7 +9,9 @@ class AccountService {
     try {
       const Response = await api.get('/account')
       AppState.account = new Account(Response.data)
-    } catch (err) {
+      AppState.emit('account')
+      console.log('a', AppState.account)
+    } catch (error) {
       logger.error(error)
     }
   }
@@ -46,10 +48,6 @@ class AccountService {
     // console.log(res)
   }
 
-  logout(){
-    AppState.user = null
-    AppState.account = null
-  }
 }
 
 export const accountService = new AccountService()
